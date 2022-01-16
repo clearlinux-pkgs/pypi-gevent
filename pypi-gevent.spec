@@ -4,7 +4,7 @@
 #
 Name     : pypi-gevent
 Version  : 21.12.0
-Release  : 65
+Release  : 66
 URL      : https://files.pythonhosted.org/packages/c8/18/631398e45c109987f2d8e57f3adda161cc5ff2bd8738ca830c3a2dd41a85/gevent-21.12.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/c8/18/631398e45c109987f2d8e57f3adda161cc5ff2bd8738ca830c3a2dd41a85/gevent-21.12.0.tar.gz
 Summary  : Coroutine-based network library
@@ -13,12 +13,8 @@ License  : BSD-2-Clause CC-BY-4.0 MIT Python-2.0
 Requires: pypi-gevent-license = %{version}-%{release}
 Requires: pypi-gevent-python = %{version}-%{release}
 Requires: pypi-gevent-python3 = %{version}-%{release}
-BuildRequires : Cython
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-distutils3
-Provides: gevent
-Provides: gevent-python
-Provides: gevent-python3
 BuildRequires : pypi(cffi)
 BuildRequires : pypi(cython)
 BuildRequires : pypi(greenlet)
@@ -26,6 +22,7 @@ BuildRequires : pypi(setuptools)
 BuildRequires : pypi(wheel)
 BuildRequires : pypi(zope.event)
 BuildRequires : pypi(zope.interface)
+BuildRequires : pypi-cython
 
 %description
 An example of AJAX chat taken from Tornado demos and converted to use django and gevent.
@@ -70,7 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641438097
+export SOURCE_DATE_EPOCH=1642360939
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
