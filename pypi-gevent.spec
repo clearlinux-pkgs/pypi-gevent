@@ -5,7 +5,7 @@
 #
 Name     : pypi-gevent
 Version  : 22.10.2
-Release  : 81
+Release  : 82
 URL      : https://files.pythonhosted.org/packages/9f/4a/e9e57cb9495f0c7943b1d5965c4bdd0d78bc4a433a7c96ee034b16c01520/gevent-22.10.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/9f/4a/e9e57cb9495f0c7943b1d5965c4bdd0d78bc4a433a7c96ee034b16c01520/gevent-22.10.2.tar.gz
 Summary  : Coroutine-based network library
@@ -15,6 +15,10 @@ Requires: pypi-gevent-license = %{version}-%{release}
 Requires: pypi-gevent-python = %{version}-%{release}
 Requires: pypi-gevent-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
+BuildRequires : pypi(cffi)
+BuildRequires : pypi(cython)
+BuildRequires : pypi(greenlet)
+BuildRequires : pypi(setuptools)
 BuildRequires : pypi-cython
 # Suppress stripping binaries
 %define __strip /bin/true
@@ -66,7 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683037551
+export SOURCE_DATE_EPOCH=1685560078
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
