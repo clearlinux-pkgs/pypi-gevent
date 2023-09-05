@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-gevent
-Version  : 23.7.0
-Release  : 83
-URL      : https://files.pythonhosted.org/packages/8a/fb/d16e63f0dfce72f49edaa0b22f69218d196601c0c3366e5094ea90a6bbca/gevent-23.7.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/8a/fb/d16e63f0dfce72f49edaa0b22f69218d196601c0c3366e5094ea90a6bbca/gevent-23.7.0.tar.gz
+Version  : 23.9.0.post1
+Release  : 84
+URL      : https://files.pythonhosted.org/packages/a0/06/7727ae8e3a065078327386b1c611995efb1a50a455fbab8af612d3b2d9ce/gevent-23.9.0.post1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/a0/06/7727ae8e3a065078327386b1c611995efb1a50a455fbab8af612d3b2d9ce/gevent-23.9.0.post1.tar.gz
 Summary  : Coroutine-based network library
 Group    : Development/Tools
 License  : BSD-2-Clause CC-BY-4.0 MIT Python-2.0
@@ -20,6 +20,7 @@ BuildRequires : pypi(cython)
 BuildRequires : pypi(greenlet)
 BuildRequires : pypi(setuptools)
 BuildRequires : pypi-cython
+BuildRequires : python3-dev
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -58,10 +59,10 @@ python3 components for the pypi-gevent package.
 
 
 %prep
-%setup -q -n gevent-23.7.0
-cd %{_builddir}/gevent-23.7.0
+%setup -q -n gevent-23.9.0.post1
+cd %{_builddir}/gevent-23.9.0.post1
 pushd ..
-cp -a gevent-23.7.0 buildavx2
+cp -a gevent-23.9.0.post1 buildavx2
 popd
 
 %build
@@ -69,7 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1689176045
+export SOURCE_DATE_EPOCH=1693931352
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
