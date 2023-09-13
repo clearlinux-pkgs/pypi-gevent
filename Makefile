@@ -1,5 +1,5 @@
 PKG_NAME := pypi-gevent
-URL = https://files.pythonhosted.org/packages/a0/06/7727ae8e3a065078327386b1c611995efb1a50a455fbab8af612d3b2d9ce/gevent-23.9.0.post1.tar.gz
+URL = https://files.pythonhosted.org/packages/8e/ce/d2b9a376ee010f6d548bf1b6b6eddc372a175e6e100896e607c57e37f7cf/gevent-23.9.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
