@@ -6,10 +6,10 @@
 # autospec commit: f35655a
 #
 Name     : pypi-gevent
-Version  : 24.10.2
-Release  : 89
-URL      : https://files.pythonhosted.org/packages/72/91/e870ada18283016ee8e87d182fa2a092fedbc3d08c361e10800347de21d3/gevent-24.10.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/72/91/e870ada18283016ee8e87d182fa2a092fedbc3d08c361e10800347de21d3/gevent-24.10.2.tar.gz
+Version  : 24.10.3
+Release  : 90
+URL      : https://files.pythonhosted.org/packages/70/f0/be10ed5d7721ed2317d7feb59e167603217156c2a6d57f128523e24e673d/gevent-24.10.3.tar.gz
+Source0  : https://files.pythonhosted.org/packages/70/f0/be10ed5d7721ed2317d7feb59e167603217156c2a6d57f128523e24e673d/gevent-24.10.3.tar.gz
 Summary  : Coroutine-based network library
 Group    : Development/Tools
 License  : BSD-2-Clause CC-BY-4.0 MIT Python-2.0
@@ -62,10 +62,10 @@ python3 components for the pypi-gevent package.
 
 
 %prep
-%setup -q -n gevent-24.10.2
-cd %{_builddir}/gevent-24.10.2
+%setup -q -n gevent-24.10.3
+cd %{_builddir}/gevent-24.10.3
 pushd ..
-cp -a gevent-24.10.2 buildavx2
+cp -a gevent-24.10.3 buildavx2
 popd
 
 %build
@@ -73,7 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1728664026
+export SOURCE_DATE_EPOCH=1729272207
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
