@@ -7,7 +7,7 @@
 #
 Name     : pypi-gevent
 Version  : 24.11.1
-Release  : 92
+Release  : 93
 URL      : https://files.pythonhosted.org/packages/ab/75/a53f1cb732420f5e5d79b2563fc3504d22115e7ecfe7966e5cf9b3582ae7/gevent-24.11.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ab/75/a53f1cb732420f5e5d79b2563fc3504d22115e7ecfe7966e5cf9b3582ae7/gevent-24.11.1.tar.gz
 Summary  : Coroutine-based network library
