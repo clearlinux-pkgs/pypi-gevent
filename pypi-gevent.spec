@@ -6,10 +6,10 @@
 # autospec commit: 9594167
 #
 Name     : pypi-gevent
-Version  : 25.4.2
-Release  : 95
-URL      : https://files.pythonhosted.org/packages/00/e5/a2d9c2d5bfb575973bca7733b23e7f8649f1079c18140a8680a551f3963e/gevent-25.4.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/00/e5/a2d9c2d5bfb575973bca7733b23e7f8649f1079c18140a8680a551f3963e/gevent-25.4.2.tar.gz
+Version  : 25.5.1
+Release  : 96
+URL      : https://files.pythonhosted.org/packages/f1/58/267e8160aea00ab00acd2de97197eecfe307064a376fb5c892870a8a6159/gevent-25.5.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/f1/58/267e8160aea00ab00acd2de97197eecfe307064a376fb5c892870a8a6159/gevent-25.5.1.tar.gz
 Summary  : Coroutine-based network library
 Group    : Development/Tools
 License  : BSD-2-Clause CC-BY-4.0 MIT Python-2.0
@@ -61,10 +61,10 @@ python3 components for the pypi-gevent package.
 
 
 %prep
-%setup -q -n gevent-25.4.2
-cd %{_builddir}/gevent-25.4.2
+%setup -q -n gevent-25.5.1
+cd %{_builddir}/gevent-25.5.1
 pushd ..
-cp -a gevent-25.4.2 buildavx2
+cp -a gevent-25.5.1 buildavx2
 popd
 
 %build
@@ -72,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1745515465
+export SOURCE_DATE_EPOCH=1747059375
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -115,8 +115,9 @@ mkdir -p %{buildroot}/usr/share/package-licenses/pypi-gevent
 cp %{_builddir}/gevent-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-gevent/e390b2ea7c66d8859ed575dcad84522b804123ae || :
 cp %{_builddir}/gevent-%{version}/NOTICE %{buildroot}/usr/share/package-licenses/pypi-gevent/c3c1f290cd381675b69efce2eee3c2ce03d398d8 || :
 cp %{_builddir}/gevent-%{version}/deps/libev/LICENSE %{buildroot}/usr/share/package-licenses/pypi-gevent/10e633ee2e9f8a961554d0d579f03a1d0755ff3b || :
-cp %{_builddir}/gevent-%{version}/deps/libuv/LICENSE %{buildroot}/usr/share/package-licenses/pypi-gevent/995532b42e0ad16d5ee90d1538f3d74a91fa76e6 || :
+cp %{_builddir}/gevent-%{version}/deps/libuv/LICENSE %{buildroot}/usr/share/package-licenses/pypi-gevent/0b475e38bd94d37bcfbfc28ea7fc024bd80a280a || :
 cp %{_builddir}/gevent-%{version}/deps/libuv/LICENSE-docs %{buildroot}/usr/share/package-licenses/pypi-gevent/1167f0e28fe2db01e38e883aaf1e749fb09f9ceb || :
+cp %{_builddir}/gevent-%{version}/deps/libuv/LICENSE-extra %{buildroot}/usr/share/package-licenses/pypi-gevent/7db2a53252ca3d44462e8b3c050c97742d726850 || :
 python3 -m installer --destdir=%{buildroot} dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -136,9 +137,10 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
+/usr/share/package-licenses/pypi-gevent/0b475e38bd94d37bcfbfc28ea7fc024bd80a280a
 /usr/share/package-licenses/pypi-gevent/10e633ee2e9f8a961554d0d579f03a1d0755ff3b
 /usr/share/package-licenses/pypi-gevent/1167f0e28fe2db01e38e883aaf1e749fb09f9ceb
-/usr/share/package-licenses/pypi-gevent/995532b42e0ad16d5ee90d1538f3d74a91fa76e6
+/usr/share/package-licenses/pypi-gevent/7db2a53252ca3d44462e8b3c050c97742d726850
 /usr/share/package-licenses/pypi-gevent/c3c1f290cd381675b69efce2eee3c2ce03d398d8
 /usr/share/package-licenses/pypi-gevent/e390b2ea7c66d8859ed575dcad84522b804123ae
 
